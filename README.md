@@ -4,9 +4,9 @@
     </a>
 </p>
 
-Designed by [Agile Lab](https://www.agilelab.it/), Witboost is a versatile platform that addresses a wide range of sophisticated data engineering challenges. It enables businesses to discover, enhance, and productize their data, fostering the creation of automated data platforms that adhere to the highest standards of data governance. Want to know more about Witboost? Check it out [here](https://witboost.com/) or [contact us!](https://witboost.com/contact-us)
+Designed by [Agile Lab](https://www.agilelab.it/), witboost is a versatile platform that addresses various sophisticated data engineering challenges. It enables businesses to discover, enhance, and productize their data, fostering the creation of automated data platforms that adhere to the highest standards of data governance. Want to know more about witboost? Check it out [here](https://www.witboost.com) or [contact us!](https://witboost.com/contact-us)
 
-This repository is part of our [Starter Kit](https://github.com/agile-lab-dev/witboost-starter-kit) meant to showcase Witboost's integration capabilities and provide a "batteries-included" product.
+This repository is part of our [Starter Kit](https://github.com/agile-lab-dev/witboost-starter-kit) meant to showcase witboost's integration capabilities and provide a "batteries-included" product.
 
 # GoodData Specific Provisioner
 
@@ -20,6 +20,21 @@ This repository is part of our [Starter Kit](https://github.com/agile-lab-dev/wi
 ## Overview
 
 This project implements a Specific Provisioner for GoodData, using Python & FastAPI.
+![image](https://github.com/user-attachments/assets/fbb3c566-0b88-49e1-a7eb-d74fdbb2a3f7)
+
+[GoodData](https://www.gooddata.com/) is an AI-fueled data analytics platform for creating customized data products with advanced interactive analytics capabilities.
+GoodData offers great API to automate the full lifecycle of data models and dashboards, also managing multiple environments.
+
+This integration is automating several aspects:
+- workspace creation
+- data model management
+- dashboard creation and deployment
+- user profiles setting
+- business metadata management
+
+  ![image](https://github.com/user-attachments/assets/53f0cf9a-884a-4ee9-8549-35b2224d6823)
+
+
 
 ### What's a Specific Provisioner?
 
@@ -27,11 +42,7 @@ A Specific Provisioner is a microservice which is in charge of deploying compone
 
 You can learn more about how the Specific Provisioners fit in the broader picture [here](https://docs.witboost.agilelab.it/docs/p2_arch/p1_intro/#deploy-flow).
 
-### What's GoodData?
 
-GoodData is an AI-fueled data analytics platform for creating customized data products with advanced interactive analytics capabilities.
-
-Check it out [here](https://www.gooddata.com/).
 
 ### Software stack
 
@@ -130,17 +141,16 @@ This project is available under the [Apache License, Version 2.0](https://openso
 ## About us
 
 <p align="center">
-    <a href="https://www.agilelab.it">
-        <img src="docs/img/agilelab_logo.svg" alt="Agile Lab" width=600>
+    <a href="https://www.witboost.com">
+        <img src="docs/img/witboost_logo.svg" alt="Witboost" width=600>
     </a>
 </p>
 
-Agile Lab creates value for its Clients in data-intensive environments through customizable solutions to establish performance driven processes, sustainable architectures, and automated platforms driven by data governance best practices.
+From Chaos to Control: Data Experience on Guardrails
+Craft your own standards and automate your data practice
 
-Since 2014 we have implemented 100+ successful Elite Data Engineering initiatives and used that experience to create Witboost: a technology agnostic, modular platform, that empowers modern enterprises to discover, elevate and productize their data both in traditional environments and on fully compliant Data mesh architectures.
-
-[Contact us](https://www.agilelab.it/contacts) or follow us on:
-- [LinkedIn](https://www.linkedin.com/company/agile-lab/)
+[Contact us](https://witboost.com/contact-us) or follow us on:
+- [LinkedIn](https://www.linkedin.com/showcase/witboost/)
 - [Instagram](https://www.instagram.com/agilelab_official/)
 - [YouTube](https://www.youtube.com/channel/UCTWdhr7_4JmZIpZFhMdLzAA)
 - [Twitter](https://twitter.com/agile__lab)
