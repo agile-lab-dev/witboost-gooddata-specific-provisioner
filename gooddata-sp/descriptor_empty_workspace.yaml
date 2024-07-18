@@ -1,0 +1,199 @@
+dataProduct:
+  id: urn:dmb:dp:healthcare:vaccinations:0
+  name: Vaccinations
+  fullyQualifiedName: Vaccinations
+  description: DP about vaccinations
+  kind: dataproduct
+  domain: healthcare
+  version: 0.1.0
+  environment: development
+  dataProductOwner: user:nicolo.bidotti_agilelab.it
+  dataProductOwnerDisplayName: Name Surname
+  email: name.surname@email.com
+  ownerGroup: name.surname_email.com
+  devGroup: group:olive
+  informationSLA: 2BD
+  maturity: Tactical
+  billing: { }
+  tags: [ ]
+  specific: { }
+  domainId: urn:dmb:dmn:healthcare
+  useCaseTemplateId: urn:dmb:utm:dataproduct-template:0.0.0
+  infrastructureTemplateId: urn:dmb:itm:dataproduct-provisioner:1
+  components:
+    - kind: storage
+      id: urn:dmb:cmp:healthcare:vaccinations:0:snowflake-storage
+      description: Snowflake Storage
+      name: Snowflake Storage
+      fullyQualifiedName: Snowflake Storage
+      version: 0.0.0
+      infrastructureTemplateId: urn:dmb:itm:snowflake-storage-provisioner:0
+      useCaseTemplateId: urn:dmb:utm:snowflake-storage-template:0.0.0
+      dependsOn: [ ]
+      platform: Snowflake
+      technology: Snowflake
+      StorageType: Database
+      tags: [ ]
+      specific:
+        database: HEALTHCARE
+        schema: TESTVACCINATIONSNICO_0
+        tables:
+          - tableName: vaccinations_clean
+            schema:
+              - name: date
+                dataType: DATE
+                constraint: PRIMARY_KEY
+              - name: location_key
+                dataType: TEXT
+                constraint: PRIMARY_KEY
+                dataLength: 16777216
+              - name: new_persons_vaccinated
+                dataType: NUMBER
+                precision: 38
+                scale: 0
+              - name: new_persons_fully_vaccinated
+                dataType: NUMBER
+                precision: 38
+                scale: 0
+              - name: new_vaccine_doses_administered
+                dataType: NUMBER
+                precision: 38
+                scale: 0
+              - name: cumulative_persons_vaccinated
+                dataType: NUMBER
+                precision: 38
+                scale: 0
+              - name: cumulative_persons_fully_vaccinated
+                dataType: NUMBER
+                precision: 38
+                scale: 0
+              - name: cumulative_vaccine_doses_administered
+                dataType: NUMBER
+                precision: 38
+                scale: 0
+    - kind: outputport
+      id: urn:dmb:cmp:healthcare:vaccinations:0:snowflake-output-port
+      description: Example data product for the Vaccinations use case
+      name: Snowflake Output Port
+      fullyQualifiedName: Snowflake Output Port
+      version: 0.0.0
+      infrastructureTemplateId: urn:dmb:itm:snowflake-outputport-provisioner:0
+      useCaseTemplateId: urn:dmb:utm:snowflake-outputport-template:0.0.0
+      dependsOn:
+        - urn:dmb:cmp:healthcare:vaccinations:0:snowflake-storage
+      platform: Snowflake
+      technology: Snowflake
+      outputPortType: SQL
+      creationDate: 2023-12-04T11:38:05.500Z
+      startDate: 2023-12-04T11:38:05.500Z
+      dataContract:
+        schema:
+          - name: date
+            description: null
+            dataType: DATE
+            tags: [ ]
+          - name: location_key
+            description: null
+            dataType: TEXT
+            dataLength: 16777216
+            tags:
+              - tagFQN: PII
+                source: GLOSSARY
+                labelType: MANUAL
+                state: CONFIRMED
+          - name: new_persons_vaccinated
+            description: null
+            dataType: NUMBER
+            precision: 38
+            scale: 0
+            tags: [ ]
+          - name: new_persons_fully_vaccinated
+            description: null
+            dataType: NUMBER
+            precision: 38
+            scale: 0
+            tags: [ ]
+          - name: new_vaccine_doses_administered
+            description: null
+            dataType: NUMBER
+            precision: 38
+            scale: 0
+            tags: [ ]
+          - name: newcolumn
+            description: null
+            dataType: TEXT
+            dataLength: 16777216
+            tags: [ ]
+        SLA:
+          intervalOfChange: 2BD
+          timeliness: 2BD
+          upTime: 99.9%
+        termsAndConditions: Can be used for production purposes test.
+      tags: [ ]
+      sampleData: { }
+      semanticLinking: [ ]
+      specific:
+        viewName: vaccinations_view
+        tableName: vaccinations_clean
+        database: HEALTHCARE
+        schema: TESTVACCINATIONSNICO_0
+        hello: dev
+      dataSharingAgreement:
+        purpose: Foundational data for downstream use cases.
+        billing: None.
+        security: Platform standard security policies.
+        intendedUsage: Any downstream use cases.
+        limitations: Needs joining with other datasets (eg customer data) for most
+          analytical use cases.
+        lifeCycle: Data loaded every two days and typically never deleted.
+        confidentiality: None.
+    - kind: outputport
+      id: urn:dmb:cmp:healthcare:vaccinations:0:gooddata-output-port
+      name: GoodData Output Port
+      fullyQualifiedName: GoodData Output Port
+      description: GoodData Dashboard
+      version: 0.0.0
+      infrastructureTemplateId: urn:dmb:itm:gooddata-provisioner:0
+      useCaseTemplateId: urn:dmb:utm:gooddata-outputport-template:0.0.0
+      dependsOn:
+        - urn:dmb:cmp:healthcare:vaccinations:0:snowflake-output-port
+      platform: GoodData
+      technology: GoodData
+      outputPortType: Dashboard
+      creationDate: 2023-06-12T12:52:11.737Z
+      startDate: 2023-06-12T12:52:11.737Z
+      dataContract:
+        schema: [ ]
+      dataSharingAgreement: { }
+      tags: [ ]
+      sampleData: { }
+      semanticLinking: [ ]
+      specific:
+        workspaceId: "empty_workspace_test"
+        workspaceName: "Empty Workspace Test"
+        userDataFilters:
+          - user: user:nicolo.bidotti_agilelab.it
+            maql: "{label/LOCATION_KEY} = \"\""
+            id: "location_1"
+            title: "Location Filter"
+          - user: user:lukas.uher_gooddata.com
+            maql: ""
+            id: "location_2"
+            title: "Location Filter"
+          - user: user:jan.pansky_gooddata.com
+            maql: "{label/LOCATION_KEY} = \"\""
+            id: "location_3"
+            title: "Location Filter"
+        workspaceLayout:
+          analytics:
+            analyticalDashboardExtensions: []
+            analyticalDashboards: []
+            attributeHierarchies: []
+            dashboardPlugins: []
+            filterContexts: []
+            metrics: []
+            visualizationObjects: []
+          ldm:
+            datasets: []
+            dateInstances: []
+componentIdToProvision: urn:dmb:cmp:healthcare:vaccinations:0:gooddata-output-port

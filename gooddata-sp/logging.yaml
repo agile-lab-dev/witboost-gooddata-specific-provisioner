@@ -1,0 +1,21 @@
+version: 1
+
+disable_existing_loggers: False
+
+formatters:
+  default:
+    use_colors: True
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    datefmt: '%Y/%mm/%d %H:%M:%S'
+  access:
+    use_colors: True
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    datefmt: '%Y/%mm/%d %H:%M:%S'
+
+
+handlers:
+    console:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: default
+        stream: ext://sys.stdout
