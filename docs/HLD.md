@@ -48,7 +48,7 @@ The lifecycle of a GoodData Output Port component relies on the reverse provisio
 
 The user first creates a component using the Template in Witboost, which creates a component repository with example code. The user then deploys the component, which creates resources on GoodData. The user can then work as he normally would, editing the objects on the Workspace, and then use the reverse provisioning operation to update the component definition. Thica can then be updated to deploy to other environments, where the user is not allowed edit permissions.
 
-![Development Workflow](img/hld-output-port-workflow.png)
+![Development Workflow](img/hld-op-workflow.png)
 
 ## Output Port Provisioning
 
@@ -62,7 +62,7 @@ If the Workspace already exists, no creation operation is performed.
 
 After this, the provisioner imports the objects specified in the component metadata (in the `specific.workspaceDefinition` field) using the import API.
 
-![Workspace Provisioning](img/hld-output-port-workspace-provisioning.png)
+![Workspace Provisioning](img/hld-op-workspace-provisioning.png)
 
 ### Workspace Reverse Provisioning
 
@@ -74,16 +74,16 @@ The provisioner receives the following parameters as inputs from the user via th
 
 It then uses the export API to export objects from the Workspace, then outputs uptaed metadata to the client by updating the `specific.workspaceDefinition` field.
 
-![Workspace Reverse Provisioning](img/hld-output-port-workspace-reverse-provisioning.png)
+![Workspace Reverse Provisioning](img/hld-op-workspace-reverseprovisioning.png)
 
 ## Unprovisioning
 
 Unprovisioning consists of removing the existing resources associated to the components. The Workspace itself is simply deleted.
 
-![Workspace Unprovisioning](img/hld-output-port-workspace-unprovisioning.png)
+![Workspace Unprovisioning](img/hld-op-workspace-unprovisioning.png)
 
 ## Update ACL
 
 Update ACL operation enables the platform to update the permissions on the Workspace/Dashboards whenever a new consumer is granted access. The provisioner receives an update d list of identities to grant access to, and the provisioner applies these grants on GoodData.
 
-![Update ACL](img/hld-output-port-update-acl.png)
+![Update ACL](img/hld-op-workspace-updateacl.png)
